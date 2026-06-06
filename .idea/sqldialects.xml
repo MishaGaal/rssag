@@ -2,9 +2,11 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/sql/queries/feeds.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/sql/queries/posts.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/sql/schema/002_users_apikey.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/sql/schema/003_feeds.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/sql/schema/004_feed_follows.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/sql/schema/005_feed_follows_fetched.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/sql/schema/006_posts.sql" dialect="GenericSQL" />
   </component>
 </project>

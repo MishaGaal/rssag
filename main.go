@@ -61,15 +61,21 @@ func main() {
 	v1Router := chi.NewRouter()
 	v1Router.Get("/test", handleReadiness)
 	v1Router.Get("/err", handleError)
+
 	v1Router.Post("/user", apiCfg.handleCreateUser)
 	v1Router.Get("/user", apiCfg.middlewareAuth(apiCfg.handleGetUserByApiKey))
+
 	v1Router.Get("/feed", apiCfg.middlewareAuth(apiCfg.handleGetFeedByApiKeyAndFeedId))
 	v1Router.Get("/feedAll", apiCfg.middlewareAuth(apiCfg.handleGetAllFeeds))
 	v1Router.Get("/feedUser", apiCfg.middlewareAuth(apiCfg.handleGetUserFeeds))
 	v1Router.Post("/feed", apiCfg.middlewareAuth(apiCfg.handleCreateFeed))
+
 	v1Router.Post("/feed_follows", apiCfg.middlewareAuth(apiCfg.handleCreateFeedFollow))
 	v1Router.Get("/feed_follows", apiCfg.middlewareAuth(apiCfg.handleGetUserFollows))
 	v1Router.Delete("/feed_follows/{feedFollowID}", apiCfg.middlewareAuth(apiCfg.handleDeleteUserFollow))
+
+	v1Router.Get("/posts", apiCfg.middlewareAuth(apiCfg.handleGetUserPosts))
+
 	router.Mount("/v1", v1Router)
 
 	err1 := srv.ListenAndServe()
